@@ -9,6 +9,7 @@ export default function Hero() {
         loop
         muted
         playsInline
+        aria-hidden="true"
         className="absolute top-0 left-0 w-full h-full object-cover"
         poster="https://cloudflare-images.seekho.in/blog-image/compressed-banner/09015d69-7879-4f3e-b3a9-f575160f03dc/f757295dde9f483eae13c2cda98be8b2.webp" // Use optimized JPG instead of PNG
         preload="none" // Add preload="none" to prevent early loading
