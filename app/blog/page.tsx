@@ -1,5 +1,16 @@
-import BlogPostCard from "../components/BlogPostCard";
+import dynamic from "next/dynamic";
+import { Metadata } from "next";
+import BlogPostSkeleton from "../components/BlogPostSkeleton";
+
+const BlogPostCard = dynamic(() => import("../components/BlogPostCard"), {
+  loading: () => <BlogPostSkeleton />,
+});
 import Newsletter from "../components/Newsletter";
+
+export const metadata: Metadata = {
+  title: "Blog - MagicMoments",
+  description: "Latest insights and updates about AI art generation",
+};
 
 export default function Blog() {
   return (

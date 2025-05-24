@@ -1,7 +1,16 @@
+import dynamic from "next/dynamic";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
-import Gallery from "./components/Gallery";
-import FontShowcase from "./components/FontShowcase";
+import GallerySkeleton from "./components/GallerySkeleton";
+// import Gallery from "./components/Gallery";
+const Gallery = dynamic(() => import("./components/Gallery"), {
+  loading: () => <GallerySkeleton />,
+});
+const FontShowcase = dynamic(() => import("./components/FontShowcase"), {
+  ssr:false,
+});
+
+// import FontShowcase from "./components/FontShowcase";
 
 const features = [
   {

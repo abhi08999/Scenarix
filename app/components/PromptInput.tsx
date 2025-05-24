@@ -73,6 +73,7 @@ export default function PromptInput({
       />
       <div className="text-sm text-gray-500 mt-1">{charCountDisplay}</div>
       <button
+      aria-label="Generate artwork"
         onClick={handleGenerate}
         disabled={isButtonDisabled}
         className="w-full mt-4 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"

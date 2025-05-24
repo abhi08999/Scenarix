@@ -1,8 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
+import GeneratedImageSkeleton from "../components/GeneratedImageSkeleton";
 import PromptInput from "../components/PromptInput";
-import GeneratedImage from "../components/GeneratedImage";
+const GeneratedImage = dynamic(() => import("../components/GeneratedImage"), {
+  loading: () => <GeneratedImageSkeleton />,
+});
 
 export default function Demo() {
   const [prompt, setPrompt] = useState("");
